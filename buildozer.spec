@@ -52,4 +52,4 @@ android.accept_sdk_license = True
 log_level = 2
 
 # (int) Display warning if run as root
-warn_on_root = 1
+warn_on_root = 0
