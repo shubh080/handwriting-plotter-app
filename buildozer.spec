@@ -1,8 +1,5 @@
 [app]
 
-# (str) Version of your application
-version = 0.1
-
 # (str) Title of your application
 title = Plotter Controller
 
@@ -21,35 +18,38 @@ source.dir = .
 # (list) Source files to include
 source.include_exts = py,png,jpg,kv,atlas
 
+# (str) Version of your application
+version = 0.1
+
 # (list) Application requirements
-# Needed so Python, Kivy UI, and USB OTG Serial work on Android
 requirements = python3,kivy,pyserial
 
-# (str) Supported orientation (portrait, landscape, or all)
+# (str) Supported orientation
 orientation = portrait
 
-# (int) Fullscreen mode (0 = normal app with status bar, 1 = full screen)
+# (int) Fullscreen mode
 fullscreen = 0
 
 # (list) Permissions
-# Required to read G-code files from phone storage and communicate with USB hardware
 android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 # (list) Features
-# Declares USB host mode capability for your OTG cable connection
 android.features = android.hardware.usb.host
 
-# (bool) Use --private data storage (True) or --dir public storage (False)
+# (bool) Use private data storage
 android.private_storage = True
 
-# (int) Target Android API (leave default/commented or set standard)
+# (int) Target Android API
 android.api = 31
 android.minapi = 21
 
+# Automatically accept Android SDK licenses
+android.accept_sdk_license = True
+
 [buildozer]
 
-# (int) Log level (0 = error only, 1 = info, 2 = debug with command output)
+# (int) Log level
 log_level = 2
 
-# (int) Display warning if buildozer is run as root (0 = False, 1 = True)
+# (int) Display warning if run as root
 warn_on_root = 1
