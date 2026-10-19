@@ -57,9 +57,8 @@ jobs:
     - name: Build APK with Buildozer
       run: |
         export P4A_NDK_VERSION="25b"
-        buildozer android clean
+        rm -rf .buildozer
         buildozer android debug
-
     - name: Upload Finished APK
       uses: actions/upload-artifact@v4
       with:
