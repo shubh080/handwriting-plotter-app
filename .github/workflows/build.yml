@@ -54,7 +54,7 @@ jobs:
           unzip -q /tmp/ndk.zip -d /home/runner/.buildozer/android/platform/
         fi
 
-   - name: Build APK with Buildozer
+    - name: Build APK with Buildozer
       run: |
         export P4A_NDK_VERSION="25b"
         buildozer android clean
