@@ -17,6 +17,16 @@ jobs:
       with:
         python-version: '3.10'
 
+    - name: Cache Buildozer directory
+      uses: actions/cache@v4
+      with:
+        path: |
+          .buildozer
+          /home/runner/.buildozer
+        key: buildozer-${{ hashFiles('buildozer.spec') }}
+        restore-keys: |
+          buildozer-
+
     - name: Install System Dependencies
       run: |
         sudo apt-get update
@@ -48,8 +58,10 @@ jobs:
     - name: Pre-cache Android NDK r25b
       run: |
         mkdir -p /home/runner/.buildozer/android/platform
-        wget -q https://dl.google.com/android/repository/android-ndk-r25b-linux.zip -O /tmp/ndk.zip
-        unzip -q /tmp/ndk.zip -d /home/runner/.buildozer/android/platform/
+        if [ ! -d "/home/runner/.buildozer/android/platform/android-ndk-r25b" ]; then
+          wget -q https://dl.google.com/android/repository/android-ndk-r25b-linux.zip -O /tmp/ndk.zip
+          unzip -q /tmp/ndk.zip -d /home/runner/.buildozer/android/platform/
+        fi
 
     - name: Build APK with Buildozer
       run: |
