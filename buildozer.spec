@@ -61,5 +61,5 @@ android.ndk = 25b
 # (str) Path to a custom Android NDK
 android.ndk_path = /home/runner/.buildozer/android/platform/android-ndk-r25b
 
-# (str) Supported architectures
+# (str) Supported architectures (only build 64-bit to save time and prevent timeouts)
 android.archs = arm64-v8a
