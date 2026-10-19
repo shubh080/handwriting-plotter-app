@@ -56,3 +56,7 @@ warn_on_root = 0
 
 # (str) Android NDK version to use
 android.ndk = 25b
+
+
+# (str) Path to a custom Android NDK
+android.ndk_path = /home/runner/.buildozer/android/platform/android-ndk-r25b
