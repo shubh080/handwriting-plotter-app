@@ -53,3 +53,6 @@ log_level = 2
 
 # (int) Display warning if run as root
 warn_on_root = 0
+
+# (str) Android NDK version to use
+android.ndk = 25b
